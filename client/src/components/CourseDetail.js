@@ -13,7 +13,7 @@ const CourseDetail = () => {
 
   // Fetch API from ApiProvider.js
   useEffect(() => {
-    context.data.courseDetail(id)
+    context.data.getCourse(id)
       .then(res => setCourse(res))
       .catch(err => {
         console.log(err);
