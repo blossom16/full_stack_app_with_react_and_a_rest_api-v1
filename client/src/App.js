@@ -40,10 +40,10 @@ function App() {
           <Route exact path="/" component={Courses} />
           <PrivateRoute exact path="/courses/create" component={CreateCourse} />
           <Route exact path="/courses/:id" component={CourseDetail} />
-          {/* <PrivateRoute exact path="/courses/:id/update" component={UpdateCourse} />
+          <PrivateRoute exact path="/courses/:id/update" component={UpdateCourse} />
           <Route path="/signin" component={UserSignIn} />
           <Route path="/signout" component={UserSignOut} />
-  <Route path="/signup" component={UserSignUp} /> */}
+          <Route path="/signup" component={UserSignUp} />
         </Switch>
       </div>
     </Router>

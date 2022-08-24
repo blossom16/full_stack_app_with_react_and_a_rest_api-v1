@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Context } from '../Context';
 import { useHistory, Link } from 'react-router-dom';
+import ValidationError from "./ValidationError";
 
 
 const CreateCourse = () => {
@@ -21,15 +22,15 @@ const CreateCourse = () => {
     const { name, value } = e.target;
     setCourse(course => ({ ...course, [name]: value }));
   }
-
+  // Makes API call to create the course
   const onSubmit = (e) => {
     e.preventDefault();
     context.data.createCourse(course, authUser)
       .then(errors => {
         if (errors.length) {
-          setErrors(errors)
+          setErrors(errors);
         } else {
-          history('/');
+          history.push('/');
         }
       })
       .catch(err => console.log(err))
@@ -38,16 +39,7 @@ const CreateCourse = () => {
   return (
     <div className='wrap'>
       <h2>Create Course</h2>
-      {errors.length ? (
-        <>
-          <div className="validation--errors">
-            <h3>Validation errors</h3>
-            <ul>
-              {errors.map((error, index) => <li key={index}>{error}</li>)}
-            </ul>
-          </div>
-        </>
-      ) : (<></>)}
+      <ValidationError errors={errors} title="Please fix course" />
       <form onSubmit={onSubmit}>
         <div className='main--flex'>
           <div>

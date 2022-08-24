@@ -34,7 +34,7 @@ const CourseDetail = () => {
           console.log('Course deleted');
         }
       })
-      .then(() => history('/'))
+      .then(() => history.push('/'))
       .catch(err => console.log(err))
   }
 
