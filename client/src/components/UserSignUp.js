@@ -5,7 +5,7 @@ import ValidationError from "./ValidationError";
 
 // Properties for new user model
 function UserSignUp() {
-  const { data, signIn } = useContext(Context);
+  const { data, actions } = useContext(Context);
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -30,7 +30,7 @@ function UserSignUp() {
         if (errors.length) {
           setErrors(errors);
         } else {
-          signIn(user.emailAddress, user.password)
+          actions.signIn(user.emailAddress, user.password)
             .then(() => history.push('/'));
         }
       })
