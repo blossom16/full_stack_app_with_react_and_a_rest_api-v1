@@ -1,10 +1,10 @@
 
-import './styles/global.css';
 import './styles/reset.css';
+import './styles/global.css';
+
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 
 import PrivateRoute from "./PrivateRoute";
 
@@ -16,19 +16,6 @@ import UpdateCourse from "./components/UpdateCourse";
 import UserSignIn from "./components/UserSignIn";
 import UserSignOut from "./components/UserSignOut.js";
 import UserSignUp from "./components/UserSignUp";
-
-//import { withContext } from "./Context";
-
-/*Components with Context
-const HeaderWithContext = withContext(Header);
-const CourseDetailWithContext = withContext(CourseDetail);
-const CreateCourseWithContext = withContext(CreateCourse);
-const UpdateCourseWithContext = withContext(UpdateCourse);
-const UserSignInWithContext = withContext(UserSignIn);
-const UserSignOutWithContext = withContext(UserSignOut);
-const UserSignUpWithContext = withContext(UserSignUp);
-//const DeleteCourseWithContext = withContext(DeleteCourse);
-*/
 
 //Component routes
 function App() {
