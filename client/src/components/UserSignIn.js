@@ -62,10 +62,9 @@ function UserSignIn() {
           type='password'
           value={user.password}
           onChange={onChange} />
-        <div>
-          <button type="submit" className="button"> Sign In </button>
-        </div>
 
+        <button type="submit" className="button"> Sign In </button>
+        <Link className='button button-secondary' to='/'>Cancel</Link>
       </form>
 
       <p>
