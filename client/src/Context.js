@@ -35,12 +35,9 @@ export class Provider extends Component {
   signIn = async (emailAddress, password) => {
     const user = await this.data.getUser(emailAddress, password);
     if (user !== null) {
-      this.setState(() => {
-        user.password = password;
-        return {
-          authenticatedUser: user,
-        };
-      });
+      user.password = password;
+      this.setState({ authenticatedUser: user })
+
       const cookieOptions = {
         expires: 1 // 1 day
       };

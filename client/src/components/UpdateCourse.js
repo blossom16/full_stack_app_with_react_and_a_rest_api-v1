@@ -34,7 +34,7 @@ const UpdateCourse = () => {
   // Makes API call to update the course
   const onSubmit = (e) => {
     e.preventDefault();
-    context.data.updateCourse(course, authUser)
+    context.data.updateCourse(id, course, authUser)
       .then(errors => {
         if (errors.length) {
           setErrors(errors);
